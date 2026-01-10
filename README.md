@@ -1,5 +1,5 @@
-# Hose Price Prediction
-## This project develops a machine learning solution for predicting housing prices using multiple regression models. Through systematic hyperparameter tuning and optimization, we achieved a target accuracy of 80% across all evaluated models.
+## Hose Price Prediction
+#### This project develops a machine learning solution for predicting housing prices using multiple regression models. Through systematic hyperparameter tuning and optimization, we achieved a target accuracy of 80% across all evaluated models.
 ##### Methodology & Model Selection：
 I implemented and compared four distinct machine learning approaches:
 1: Polynomial Regression with SGD Optimization
