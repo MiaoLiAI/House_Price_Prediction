@@ -138,7 +138,16 @@ Root causes:
 * Sensitivity to feature scale
 * Stochastic updates overshooting optimum
 ##### before  VS after 
-<img width="567" height="455" alt="image" src="https://github.com/user-attachments/assets/a3e47432-a19d-410e-ae94-82b55caf96f7" /> <img width="826" height="483" alt="image" src="https://github.com/user-attachments/assets/7accd762-75cf-4e8d-9d73-bf2abc6a407c" />
+<img width="567" height="455" alt="image" src="https://github.com/user-attachments/assets/a3e47432-a19d-410e-ae94-82b55caf96f7" />
+<img width="826" height="483" alt="image" src="https://github.com/user-attachments/assets/7accd762-75cf-4e8d-9d73-bf2abc6a407c" />
+<div style="display: flex; gap: 16px; align-items: center;">
+  <img src="https://github.com/user-attachments/assets/a3e47432-a19d-410e-ae94-82b55caf96f7"
+       alt="Before"
+       style="width: 45%; height: auto;" />
+  <img src="https://github.com/user-attachments/assets/7accd762-75cf-4e8d-9d73-bf2abc6a407c"
+       alt="After"
+       style="width: 45%; height: auto;" />
+</div>
 
 ---
 
