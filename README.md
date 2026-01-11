@@ -137,9 +137,8 @@ Root causes:
 * Learning rate too large
 * Sensitivity to feature scale
 * Stochastic updates overshooting optimum
-### before  VS after 
-<img width="567" height="455" alt="image" src="https://github.com/user-attachments/assets/a3e47432-a19d-410e-ae94-82b55caf96f7" />
-<img width="826" height="483" alt="image" src="https://github.com/user-attachments/assets/7accd762-75cf-4e8d-9d73-bf2abc6a407c" />
+##### before  VS after 
+<img width="567" height="455" alt="image" src="https://github.com/user-attachments/assets/a3e47432-a19d-410e-ae94-82b55caf96f7" /> <img width="826" height="483" alt="image" src="https://github.com/user-attachments/assets/7accd762-75cf-4e8d-9d73-bf2abc6a407c" />
 
 ---
 
