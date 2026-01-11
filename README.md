@@ -52,7 +52,11 @@ Optimization instability → loss curve inspection (train vs validation)
 Loss Curve Insight (Before vs After)
 <p float="left"> <img src="https://github.com/user-attachments/assets/45136113-4fd0-477a-82e3-4e327a2fe45d" width="45%" /> <img src="https://github.com/user-attachments/assets/0245ab65-a328-4471-909f-a7eacc6d0097" width="45%" /> </p>
 Loss Curve Insight (Before vs After)
-<p float="left"> <div style="display: flex; gap: 16px; align-items: center;"> <img src="https://github.com/user-attachments/assets/a3e47432-a19d-410e-ae94-82b55caf96f7" alt="Before" style="width: 45%; height: auto;" /> <img <img width="790" height="490" alt="image" src="https://github.com/user-attachments/assets/1ea9d691-413b-45e6-864c-dd9ad95ebf67" /> </p>
+<p float="left"><div style="display: flex; gap: 16px; align-items: center;">
+  <img src="https://github.com/user-attachments/assets/45136113-4fd0-477a-82e3-4e327a2fe45d" alt="Before" style="width: 45%; height: auto;" />
+  <img src="https://github.com/user-attachments/assets/0245ab65-a328-4471-909f-a7eacc6d0097" alt="After" style="width: 45%; height: auto;" />
+</div>
+ </p>
 
 After tuning, SGD models converge smoothly, but final performance remains capped.
 
