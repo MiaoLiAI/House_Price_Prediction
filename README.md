@@ -90,6 +90,7 @@ This allows us to observe:
 
 * Mean validation performance
 * Train vs validation gap (bias–variance insight)
+<img width="889" height="490" alt="image" src="https://github.com/user-attachments/assets/53769244-7bff-4f29-859e-c331783cb02f" />
 
 ---
 
@@ -142,9 +143,8 @@ Root causes:
   <img src="https://github.com/user-attachments/assets/a3e47432-a19d-410e-ae94-82b55caf96f7"
        alt="Before"
        style="width: 45%; height: auto;" />
-  <img src="https://github.com/user-attachments/assets/7accd762-75cf-4e8d-9d73-bf2abc6a407c"
-       alt="After"
-       style="width: 45%; height: auto;" />
+  <img <img width="790" height="490" alt="image" src="https://github.com/user-attachments/assets/1ea9d691-413b-45e6-864c-dd9ad95ebf67" />
+
 </div>
 
 ---
@@ -227,33 +227,5 @@ Rather than chasing maximum R², the focus is on **robust generalization**.
 * Overfitting and optimization failure are distinct problems
 * Regularization and learning rate tuning solve different failure modes
 
----
 
-## 🚀 Future Improvements
-
-* GridSearchCV for systematic hyperparameter tuning
-* Tree-based ensemble models (Random Forest, XGBoost)
-* Feature interaction analysis
-* Model explainability (SHAP)
-
----
-
-## 📌 Why This Project Matters
-
-This project demonstrates:
-
-* Structured ML thinking (not trial-and-error)
-* Bias–variance diagnosis
-* Optimization debugging
-* Production-ready experimentation patterns
-
-Suitable for:
-
-* GitHub portfolio
-* Data Science / ML interviews
-* Learning best practices in model selection
-
----
-
-*Author: Miao Li*
 
