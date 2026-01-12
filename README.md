@@ -81,23 +81,16 @@ GradientBoostingRegressor – sequentially corrects errors with additive weak le
 
 Results
 GradientBoostingRegressor:
-
-
 Test set accuracy ≈ 82%
-
-
 Significant improvement over linear models
+<p float="left">
+  <img src="https://github.com/user-attachments/assets/034d830d-58b2-4120-a018-2f8d6aa50218" width="45%" alt="Before" />
+  <img src="https://github.com/user-attachments/assets/d9bd6a02-0b7b-4023-9f28-ed81999354bf" width="45%" alt="After" />
+</p>
 
-
-<img width="922" height="654" src="https://github.com/user-attachments/assets/034d830d-58b2-4120-a018-2f8d6aa50218" alt="GBR Performance" />
 RandomForestRegressor:
-
-
 Overfits training data
-
-
 Less robust on test set
-
 
 <img width="946" height="646" src="https://github.com/user-attachments/assets/d9bd6a02-0b7b-4023-9f28-ed81999354bf" alt="RF Performance" />
 ✅ Decision: Use GradientBoostingRegressor as the final model.
