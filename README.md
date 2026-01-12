@@ -79,3 +79,8 @@ RandomForestRegressor – variance reduction via bagging and feature randomness
 GradientBoostingRegressor – sequential error correction with additive weak learners
 
 These models are better suited for capturing complex interactions and are expected to significantly improve predictive performance.
+
+GradientBoostingRegressor
+outpu is accuracy around 82% foe the testing set, which dramatically increase compare to the liear regression models.
+<img width="922" height="654" alt="image" src="https://github.com/user-attachments/assets/034d830d-58b2-4120-a018-2f8d6aa50218" />
+
