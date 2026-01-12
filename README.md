@@ -76,5 +76,6 @@ Polynomial features increase capacity but overfit easily.
 SGD-based models require careful tuning, but capacity remains insufficient.
 Tree-based ensemble methods successfully capture non-linear relationships and interactions.
 Gradient Boosting provides the best generalization and is recommended for production-level housing price prediction.
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/2eaa24ab-9d5a-4060-95ae-2dc16abebc31" />
 
 
