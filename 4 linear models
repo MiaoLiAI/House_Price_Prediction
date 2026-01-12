@@ -1,0 +1,108 @@
+# Complete code for splitting training and testing sets
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+import matplotlib.pyplot as plt
+from sklearn.linear_model import Ridge
+
+# Load the dataset
+df = pd.read_csv('/content/drive/My Drive/Colab Notebooks/california_housing.csv', encoding='gbk')
+df
+
+# Prepare features and target variable
+X = df[['MedInc', 'HouseAge', 'AveRooms', 'AveBedrms', 'Population', 'AveOccup', 'Latitude', 'Longitude']]
+Y = df['PRICE']
+
+# Split data into training and testing sets
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
+
+# =========================
+# 1. Linear Regression (Baseline)
+# =========================
+linear_model = LinearRegression()
+linear_model.fit(X_train, Y_train)
+Y_pred = linear_model.predict(X_test)
+mse = mean_squared_error(Y_test, Y_pred)
+print('Linear Regression MSE:', mse)
+
+# =========================
+# 2. Polynomial Regression with Regularization (Ridge)
+# =========================
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.pipeline import make_pipeline
+
+# Create polynomial regression pipeline with increased feature complexity
+poly_reg = make_pipeline(
+    PolynomialFeatures(degree=1, include_bias=False),
+    StandardScaler(),
+    Ridge(alpha=1)
+)
+
+poly_reg.fit(X_train, Y_train)
+Y_pred_poly = poly_reg.predict(X_test)
+mse1 = mean_squared_error(Y_test, Y_pred_poly)
+print('Polynomial Model MSE:', mse1)
+
+# =========================
+# 3. SGD Regressor
+# =========================
+from sklearn.linear_model import SGDRegressor
+
+# Configure SGD Regressor with detailed parameters
+sgd = SGDRegressor(
+    loss='squared_error',      # Loss function: squared error (default)
+    penalty='l2',              # Regularization: l2/l1/elasticnet
+    alpha=0.0001,              # Regularization strength
+    max_iter=1000,             # Maximum iterations
+    tol=1e-3,                  # Convergence threshold
+    learning_rate='invscaling', # Learning rate strategy
+    eta0=0.01,                 # Initial learning rate
+    random_state=42            # Random seed
+)
+
+# Create pipeline (StandardScaler is essential for SGD)
+sgd_model = make_pipeline(StandardScaler(), sgd)
+
+sgd_model.fit(X_train, Y_train)
+Y_pred_sgd = sgd_model.predict(X_test)
+mse2 = mean_squared_error(Y_test, Y_pred_sgd)
+print('SGD Model MSE:', mse2)
+
+# =========================
+# 4. Combined Model: Polynomial Features + SGD
+# =========================
+# Combine both approaches: polynomial expansion with SGD optimization
+poly_sgd = make_pipeline(
+    PolynomialFeatures(degree=2),  # Generate polynomial features
+    StandardScaler(),              # Standardization
+    SGDRegressor(                  # SGD optimization
+        penalty='l2',
+        alpha=0.001,
+        max_iter=1000
+    )
+)
+
+poly_sgd.fit(X_train, Y_train)
+Y_pred_poly_sgd = poly_sgd.predict(X_test)
+mse3 = mean_squared_error(Y_test, Y_pred_poly_sgd)
+print('Polynomial + SGD Model MSE:', mse3)
+
+# =========================
+# 5. Random Forest Regressor (Ensemble Method)
+# =========================
+from sklearn.ensemble import RandomForestRegressor
+
+rf = RandomForestRegressor(
+    n_estimators=300,
+    max_depth=20,
+    random_state=42,
+    n_jobs=-1
+)
+
+rf.fit(X_train, Y_train)
+Y_pred_rf = rf.predict(X_test)
+mse4 = mean_squared_error(Y_test, Y_pred_rf)
+print('Random Forest MSE:', mse4)
