@@ -69,20 +69,44 @@ Polynomial expansion does not help
 Optimization issues can be fixed, but model capacity remains insufficient
 
 👉 This indicates that housing prices exhibit strong non-linear and interaction effects not captured by linear models.
+🔜 Next Step: Tree-Based Ensemble Models
+To model non-linear effects and interactions more effectively, we explored:
 
-🔜 Next Step
 
-To better model these non-linear effects, the next phase of this project explores tree-based ensemble models, including:
+RandomForestRegressor – reduces variance via bagging and feature randomness.
 
-RandomForestRegressor – variance reduction via bagging and feature randomness
 
-GradientBoostingRegressor – sequential error correction with additive weak learners
+GradientBoostingRegressor – sequentially corrects errors with additive weak learners.
 
-These models are better suited for capturing complex interactions and are expected to significantly improve predictive performance.
 
-GradientBoostingRegressor
-outpu is accuracy around 82% foe the testing set, which dramatically increase compare to the liear regression models.
-<img width="922" height="654" alt="image" src="https://github.com/user-attachments/assets/034d830d-58b2-4120-a018-2f8d6aa50218" />
-RandomForestRegressor
-<img width="946" height="646" alt="image" src="https://github.com/user-attachments/assets/d9bd6a02-0b7b-4023-9f28-ed81999354bf" />
+Results
+GradientBoostingRegressor:
+
+
+Test set accuracy ≈ 82%
+
+
+Significant improvement over linear models
+
+
+<img width="922" height="654" src="https://github.com/user-attachments/assets/034d830d-58b2-4120-a018-2f8d6aa50218" alt="GBR Performance" />
+RandomForestRegressor:
+
+
+Overfits training data
+
+
+Less robust on test set
+
+
+<img width="946" height="646" src="https://github.com/user-attachments/assets/d9bd6a02-0b7b-4023-9f28-ed81999354bf" alt="RF Performance" />
+✅ Decision: Use GradientBoostingRegressor as the final model.
+
+💡 Summary
+Linear models hit a performance ceiling due to limited expressiveness.
+Polynomial features increase capacity but overfit easily.
+SGD-based models require careful tuning, but capacity remains insufficient.
+Tree-based ensemble methods successfully capture non-linear relationships and interactions.
+Gradient Boosting provides the best generalization and is recommended for production-level housing price prediction.
+
 
