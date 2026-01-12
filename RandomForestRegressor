@@ -1,0 +1,54 @@
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import learning_curve
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Initialize model
+rf = RandomForestRegressor(
+     n_estimators=200,
+    max_depth=None,   # No depth limit
+    max_features='sqrt',
+    bootstrap=True,
+    random_state=42  
+)
+
+# Learning curve
+train_sizes, train_scores, val_scores = learning_curve(
+    rf,
+    X_train, Y_train,
+    train_sizes=np.linspace(0.1, 1.0, 10),
+    cv=5,
+    scoring='neg_mean_squared_error',
+    n_jobs=-1
+)
+
+# Convert: sklearn returns negative MSE, we take negative to get positive MSE
+train_scores = -train_scores
+val_scores = -val_scores
+
+# Compute mean and standard deviation
+train_mean = np.mean(train_scores, axis=1)
+train_std = np.std(train_scores, axis=1)
+val_mean = np.mean(val_scores, axis=1)
+val_std = np.std(val_scores, axis=1)
+
+# Visualize learning curve
+plt.figure(figsize=(10, 6))
+plt.fill_between(train_sizes, train_mean - train_std,
+                 train_mean + train_std, alpha=0.1, color="blue")
+plt.fill_between(train_sizes, val_mean - val_std,
+                 val_mean + val_std, alpha=0.1, color="orange")
+plt.plot(train_sizes, train_mean, 'o-', color="blue", label="Training MSE")
+plt.plot(train_sizes, val_mean, 'o-', color="orange", label="Validation MSE")
+plt.xlabel("Training Examples")
+plt.ylabel("Mean Squared Error")
+plt.title("Random Forest Learning Curve (MSE)")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+resultrf = cross_validate(
+    rf, X_train, Y_train, 
+    cv=cv, scoring='r2', return_train_score=True
+)
+print(resultrf['train_score'].mean(), result1['test_score'].mean())
