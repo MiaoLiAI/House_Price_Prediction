@@ -69,3 +69,13 @@ Polynomial expansion does not help
 Optimization issues can be fixed, but model capacity remains insufficient
 
 👉 This indicates that housing prices exhibit strong non-linear and interaction effects not captured by linear models.
+
+🔜 Next Step
+
+To better model these non-linear effects, the next phase of this project explores tree-based ensemble models, including:
+
+RandomForestRegressor – variance reduction via bagging and feature randomness
+
+GradientBoostingRegressor – sequential error correction with additive weak learners
+
+These models are better suited for capturing complex interactions and are expected to significantly improve predictive performance.
