@@ -55,7 +55,6 @@ To model non-linear effects and interactions more effectively, we explored:
 RandomForestRegressor – reduces variance via bagging and feature randomness.
 GradientBoostingRegressor – sequentially corrects errors with additive weak learners.
 
-
 Results
 GradientBoostingRegressor:
 Test set accuracy ≈ 82%
@@ -77,5 +76,3 @@ SGD-based models require careful tuning, but capacity remains insufficient.
 Tree-based ensemble methods successfully capture non-linear relationships and interactions.
 Gradient Boosting provides the best generalization and is recommended for production-level housing price prediction.
 <img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/2eaa24ab-9d5a-4060-95ae-2dc16abebc31" />
-
-
